@@ -69,6 +69,6 @@ public class CodeblogController {
 		mv.addObject("post",post); //Manda o objeto para view
 		return "redirect:/posts";
 	}
-	 
+	 //teste
 	
 }

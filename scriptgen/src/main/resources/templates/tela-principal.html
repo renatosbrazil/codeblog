@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<title>Script Generator v1.0</title>
+	<link rel="icon" href="/img/favicon.png" type="image/png" sizes="16x16"></link>
+	<link rel="stylesheet"	href="/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" type="text/css" />
+	<link rel="stylesheet" th:href="@{/css/scriptgen.css}" type="text/css" />
+</head>
+
+<body>
+	<nav class="navbar navbar-light navbar-expand-lg">
+	<a class="navbar-brand" href="/">
+				<img th:src="@{/img/logo.png}" class="d-inline-block align-top" alt="" width="320" height="80"></img>				
+			</a>
+	</nav>
+	<div class="container">
+
+		<fieldset class="border p-2">
+			<legend class="w-auto">Ações</legend>
+			
+			<form id="form" action="">
+				<div class="text-center">
+					<button type="button" id="gerarsc" class="btn btn-secondary btn-lg btn-menu" data-toggle="modal" data-target="#gerarScript">Gerar os scripts</button>
+				</div>
+				<fieldset class="border p-2">
+				<legend class="w-auto">Informações</legend>
+					<div class="modal-body">
+						<strong><span>Localização dos scripts:</span></strong>
+						<ul>
+							<li><span>Script de update: oiatende\scripts_update</span></li>
+							<li><span>Script de rollback: oiatende\scripts_rollback</span></li>
+							<li><span>Script de validação: oiatende\scripts_update</span></li>
+						</ul>
+					</div>
+				</fieldset>
+			</form>
+		</fieldset>
+
+		<section layout:fragment="conteudo">
+			<div th:if="${messageOK}" class="alert alert-success alert-dismissible">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<h5 th:text="${messageOK}"></h5>
+			</div>
+			<div th:if="${messageErro}" class="alert alert-danger alert-dismissible">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<h5 th:text="${messageErro}"></h5>
+			</div>
+		</section>
+
+	</div>
+	
+	<!-- Modal de gerar script -->
+	<div class="modal fade" id="gerarScript" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form method="POST" action="/gerar" id="idgerar" enctype="multipart/form-data">
+				<div class="modal-body">
+					<strong><span>Passo 1: Informe o nome da tabela</span></strong>
+					<input type="text" name="ntabela" class="form-control" placeholder="Informe o nome da tabela" />
+				</div>
+				<div class="modal-body">
+					<strong><span>Passo 2: Selecione o arquivo de formato .xlsx</span></strong>
+					<input type="file" name="file" />
+				</div>
+					<div class="modal-footer">
+						<button id="gerar" type="submit" value="Submit" class="btn btn-primary" data-dismiss="modal" onclick="new Acoes().gerar()">Gerar</button>
+						<button id="cancelar" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<script th:src="@{/js/Acoes.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.4.0.slim.js"></script>
+	<script src="/js/bootstrap/bootstrap.min.js"></script>
+	<script src="/js/bootstrap/tempusdominus-bootstrap-4.min.js"></script>
+	
+</body>
+</html>

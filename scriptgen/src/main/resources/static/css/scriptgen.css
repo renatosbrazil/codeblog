@@ -1,0 +1,281 @@
+@charset "UTF-8";
+
+html, body {
+	font-family: "Arial Michelin", Arial, sans-serif;
+}
+
+.container {
+	max-width: 1500px;
+}
+
+legend {
+	font-size: 20px;
+	text-transform: uppercase;
+	padding: 0 10px;
+}
+p{
+	margin-bottom: 0;
+}
+.border {
+	border: 2px solid #ccc !important;
+	border: 2px solid #dee2e6 !important;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	margin-bottom: 30px;
+}
+.accordion{
+	/* font-size: 20px; */
+	border-bottom: solid #dedede 1px;
+}
+.link-pedido{
+	font-size: 12px;
+	font-size: 18px;
+}
+.header-pedido{
+	font-size: 12px;
+} 
+.btn-menu{
+	padding: 14px;
+	margin-right: 12px;
+	font-size: 0.8rem;
+}
+
+.table{
+	font-size: 12px; 
+}
+.botoes {
+	margin-bottom: 10px;
+}
+.logo{
+	width: 150px;
+	height: 80px;
+}
+.navbar {
+	margin-bottom: 20px;
+	box-shadow: 0 0 10px #cbd2d9;
+	padding: 2px 0;
+}
+
+.status {
+	color: #FFF;
+	border-radius: 2px;
+	width: 110px;
+	width: auto;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 12px;
+}
+
+.ok{
+	background-color: #28a745;
+	border-color: #28a745;
+}
+
+.pendente{
+	background-color: #ffc107;
+	border-color: #ffc107;
+}
+
+.nok{
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+
+.returned{
+	font-size: 10px;
+	font-weight: bold; 
+}
+
+.pedidoPendente{
+	font-size: 18px;
+	font-weight: bold; 
+	color: #b1952c69; 
+}
+
+.pedidoAceito{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+input::-webkit-input-placeholder {
+	font-size: 15px;
+	font-style: italic;
+}
+
+.btn-pesquisar {
+	font-size: 0.8rem;
+	font-size: 14px;
+	padding: 8px 20px;
+}
+
+a {
+	font-weight: bold;
+	color: #6c757d;
+}
+
+nav .navbar-nav, nav button.btn-link {
+	color: #27509b;
+}
+
+	nav span.separador {
+		line-height: 4;
+	}
+	
+fieldset.filtro {
+	background-color: #f5f5f5;
+	padding-bottom: 28px !important;
+}
+
+	fieldset legend {
+		color: #007bff;
+	}
+	
+fieldset legend, 
+.codigo, 
+.codigo-text {
+    color: #27509b;
+}	
+
+.codigo {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.codigo-text {
+    font-weight: bold;
+    font-size: 16px;    
+}
+
+.card.titulo-lista .card-header {
+	background-color: transparent;
+	border: none;
+    /* background: #dbe6ff; */
+}
+
+.card.titulo-lista {
+	border: none;
+}
+
+.titulo-lista .fa-caret-square-down {
+    color: #adb5bd;
+    /* text-shadow: 0 0 6px; */
+    box-shadow: inset 3px -5px 5px 0px;
+}
+
+.col-fixed-50 {
+	width: 50px
+}
+
+.col-fixed-100 {
+	width: 100px;
+	min-width: 100px;
+}
+
+.col-fixed-120 {
+	width: 120px
+}
+
+.col-fixed-130 {
+	width: 130px
+}
+
+.col-fixed-200 {
+	width: 200px
+}
+
+.col-fixed-50, 
+.col-fixed-100,
+.col-fixed-120,
+.col-fixed-130, 
+.col-fixed-200 {
+	padding: 0 15px;
+}
+
+.btn.btn-primary {
+    color: #fff;
+    background: #27509b;
+    border-radius: 2px;
+    padding: 8px 20px;
+}
+
+i.fas {
+    border-radius: 50%;
+    background-color: #27509b;
+    color: #fff;
+    padding: 4px;
+    font-size: 9px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+i.fa.fa-angle-down {
+	transition-duration: 0.6s;
+	transform: rotate(0deg);
+}
+
+i.fa.fa-angle-down.aberto {
+	transform: rotate(180deg);
+	transition-duration: 0.6s;
+}
+
+.accordion .card-header {
+	background-color: #fff;
+}
+
+	.accordion .card-header:hover {
+		background-color: #f5f5f5;
+	}
+
+.bg-lightgrey {
+	background-color: #f5f5f5 !important;
+}
+
+.alert-primary i.fa-info-circle {
+	margin-right: 15px
+}
+
+.btn-primary.disabled, 
+.btn-primary:disabled {
+    background-color: #adb5bd!important;
+    border-color: #adb5bd!important;
+}
+
+.user {
+  position: absolute;
+  right:1%;
+  color: #27509b;
+  font-weight: bold;
+}
+
+a[data-toggle="popover"] {
+	text-decoration: none
+}
+
+.popover {
+    max-width: 400px;
+    box-shadow: 0 0 5px 0px #00000045;
+}
+
+.logo{
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+
+.btn-voltar{
+	float: right;
+	margin-top: 10px;
+}
+
+.table-popover { display: table; padding: 6px 0;}
+.table-popover .tr { display: table-row }
+.table-popover .thead { display: table-row; background-color: #f5f5f5; font-weight: bold }
+.table-popover .thead .td { min-width: 80px }
+.table-popover .tbody .tr:first-child { font-weight: bold; background-color: #f5f5f5 }
+.table-popover .tbody { display: table-row-group}
+.table-popover .tfoot { display: table-footer-group }
+.table-popover .col { display: table-column}
+.table-popover .colgroup { display: table-column-group }
+.table-popover .td, .th { display: table-cell; border: 1px solid #bababa; text-align: center; padding: 10px }
+.table-popover .caption { display : table-caption }

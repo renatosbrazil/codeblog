@@ -2,6 +2,7 @@ package com.spring.codeblog.controller;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.jar.Attributes;
 
 import javax.validation.Valid;
 
@@ -52,14 +53,24 @@ public class CodeblogController {
 	public String getPostForm() {
 		return Paginas.PAGINA_POSTFORM;
 	}
+	
+	
 	@RequestMapping(value = "/newpost", method=RequestMethod.POST)
 	public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes ) {
 		if (result.hasErrors()) {
+			String mensagem="verifique se os campos obrigatorios foram preenchidos!";
+			attributes.addFlashAttribute("mensagem",mensagem);
+		//	attributes.addFlashAttribute(s:"mensagem", o:"verifique se os campos obrigatorios foram preenchidos!");
 			return "redirect:/newpost";
 		}
 		post.setData(LocalDate.now());
 		codeblogService.save(post);
 		return "redirect:/posts";
+		
+		
+		
+		
+		
 		
 	}
 	@RequestMapping(value ="/delete/{id}", method=RequestMethod.GET)

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="tela-principal">
+
+<head>
+<title> MyCodeBlog</title>
+<!-- CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+
+<body>
+	<header>
+		<nav class="navbar navbar-light bg-light">
+  			<span class="navbar-brand mb-0 h1">MyCodeBlog</span>
+  			   <a href="/newpost"><button class="btn btn-primary">Novo Post</button></a>
+		</nav>
+		
+	</header>
+
+
+	<section>
+		<div class="container" style="width:60%; padding-bottom: 30px;">
+			<nav aria-label="breadcrumb">
+			<ol class="breadcrumb" style="background-color:rgb(255, 255, 255);padding-left:0px;">
+				  <li class="breadcrumb-item active" aria-current="page">Posts</li>
+				</ol>
+			</nav>
+			
+		 	
+			<div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" th:each="post : ${posts}">
+  				<div class="card-body">
+  				
+    			<p class="card-subtitle mb-2 texte muted" style="font-size: 0.8rem;">
+    				<span th:text="${post.autor}"></span>
+    				<span th:text="${post.data}"></span>
+    			</p>
+    			
+    			<a th:href="${(#mvc.url('CC#getPostDatails').arg(0, post.id)).build()}">
+    				<h4 class="card-title" style="font-weight:bold; color:black; padding-top:5px;">
+    					<span title="Entrar na Descrição" th:text="${post.titulo}"></span>
+    				</h4>
+    			</a>   
+    			 			 
+    			<p class="card-text"><span th:utext="${#strings.abbreviate(post.texto,400)}"></span></p>
+    			
+  				</div>
+  				
+			</div>
+	 
+		</div>
+	</section>
+
+</body>
+</html>
